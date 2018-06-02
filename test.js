@@ -16,3 +16,9 @@ var HDPrivateKey = index.HDPrivateKey,
 
 var masterPrivateKeychain = null,
     accountPrivateKeychain = null,
+childPrivateKeychain = null,
+    accountPublicKeychain = null,
+    accountNumber = 0,
+    childNumber = 2,
+    childKeyName = 'blockstack.org',
+    secretHash = null
