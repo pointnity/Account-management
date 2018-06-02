@@ -1,7 +1,7 @@
+A key system based around accounts that each have hierarchical deterministic (HD) keychains with ECDSA keypairs (the ones Bitcoin uses).
+
 Getting started
-
 $ npm install keychain-manager
-
 var PrivateKeychain = require('keychain-manager').PrivateKeychain,
     PublicKeychain = require('keychain-manager').PublicKeychain
 Private Keychain
