@@ -1,5 +1,7 @@
 Getting started
+
 $ npm install keychain-manager
+
 var PrivateKeychain = require('keychain-manager').PrivateKeychain,
     PublicKeychain = require('keychain-manager').PublicKeychain
 Private Keychain
