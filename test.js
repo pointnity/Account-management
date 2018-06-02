@@ -11,3 +11,8 @@ var HDPrivateKey = index.HDPrivateKey,
     PrivateKey = index.PrivateKey,
     PublicKey = index.PublicKey,
     Address = index.Address
+
+/* keylocker Tests */
+
+var masterPrivateKeychain = null,
+    accountPrivateKeychain = null,
