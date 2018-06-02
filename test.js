@@ -22,3 +22,10 @@ childPrivateKeychain = null,
     childNumber = 2,
     childKeyName = 'blockstack.org',
     secretHash = null
+
+
+
+function testPrivateKeychain() {
+    test('prototypeFromSeed', function(t) {
+        t.plan(3)
+        
