@@ -42,3 +42,10 @@ function testPrivateKeychain() {
         t.ok(masterPrivateKeychain, 'master private keychain created')
         t.ok(masterPrivateKeychain.hdKeychain instanceof HDPrivateKey, 'master keychain is an HDPrivateKey')
     })
+   test('account', function(t) {
+        t.plan(2)
+
+        accountPrivateKeychain = masterPrivateKeychain.account(accountNumber)
+        t.ok(accountPrivateKeychain, 'account private keychain created')
+        t.ok(accountPrivateKeychain.hdKeychain instanceof HDPrivateKey, 'account keychain is an HDPrivateKey')
+    })
