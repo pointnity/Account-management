@@ -24,7 +24,6 @@ childPrivateKeychain = null,
     secretHash = null
 
 
-
 function testPrivateKeychain() {
     test('prototypeFromSeed', function(t) {
         t.plan(3)
@@ -33,5 +32,13 @@ function testPrivateKeychain() {
         masterPrivateKeychain = new PrivateKeychain(masterPrivateKeychainString)
         t.ok(masterPrivateKeychain, 'master private keychain created')
         t.equal(masterPrivateKeychain.toString(), masterPrivateKeychainString, 'master keychain string equal to reference value')
+        t.ok(masterPrivateKeychain.hdKeychain instanceof HDPrivateKey, 'master keychain is an HDPrivateKey')
+    })
+
+    test('prototypeWithoutSeed', function(t) {
+        t.plan(2)
+
+        masterPrivateKeychain = new PrivateKeychain()
+        t.ok(masterPrivateKeychain, 'master private keychain created')
         t.ok(masterPrivateKeychain.hdKeychain instanceof HDPrivateKey, 'master keychain is an HDPrivateKey')
     })
