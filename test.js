@@ -120,3 +120,15 @@ function testPublicKeychain() {
         var publicKeychain = new PublicKeychain(publicKeychainString),
             descendantPublicKeychain = publicKeychain.descendant(chainPathHash),
             descendantPublicKey = descendantPublicKeychain.publicKey()
+
+        t.ok(descendantPublicKey, 'descendant public key was derived')
+        t.equal(descendantPublicKey.toString(), referencePublicKeyHex, 'descendant public key matches the reference value')
+    })
+
+    test('publicKey', function(t) {
+        t.plan(2)
+
+        var publicKey = accountPublicKeychain.publicKey()
+        t.ok(publicKey, 'public key created')
+        t.ok(publicKey instanceof PublicKey, 'public key is a PublicKey')
+    })
