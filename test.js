@@ -103,3 +103,12 @@ function testPrivateKeychain() {
 function testPublicKeychain() {
     test('child', function(t) {
         t.plan(2)
+
+        var childPublicKeychain = accountPublicKeychain.child(childNumber),
+            childPublicKeychain = childPrivateKeychain.publicKeychain()
+        t.ok(childPublicKeychain, 'child public keychain created')
+        t.equal(childPublicKeychain, childPublicKeychain, 'child public keychain matches the one derived from the child private')
+    })
+
+    test('descendant', function(t) {
+        t.plan(2)
