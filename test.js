@@ -49,3 +49,40 @@ function testPrivateKeychain() {
         t.ok(accountPrivateKeychain, 'account private keychain created')
         t.ok(accountPrivateKeychain.hdKeychain instanceof HDPrivateKey, 'account keychain is an HDPrivateKey')
     })
+    })
+
+    test('child', function(t) {
+        t.plan(2)
+
+        childPrivateKeychain = accountPrivateKeychain.child(childNumber)
+        t.ok(childPrivateKeychain, 'child private keychain created')
+        t.ok(childPrivateKeychain.hdKeychain instanceof HDPrivateKey, 'child keychain is an HDPrivateKey')
+    })
+
+    test('publicKeychain', function(t) {
+        t.plan(2)
+
+        accountPublicKeychain = accountPrivateKeychain.publicKeychain()
+        t.ok(accountPublicKeychain, 'account public keychain created')
+        t.ok(accountPublicKeychain.hdKeychain instanceof HDPublicKey, 'account public keychain is an HDPublicKey')
+    })
+
+    test('privateKey', function(t) {
+        t.plan(2)
+
+        var childPrivateKey = childPrivateKeychain.privateKey()
+        t.ok(childPrivateKey, 'child private key created')
+        t.ok(childPrivateKey instanceof PrivateKey, 'child private key is a PrivateKey')
+    })
+
+    test('descendant', function(t) {
+        t.plan(2)
+
+        var privateKeychainString = 'xprv9s21ZrQH143K2vRPJpXPhcT12MDpL3rofvjagwKn4yZpPPFpgWn1cy1Wwp3pk78wfHSLcdyZhmEBQsZ29ZwFyTQhhkVVa9QgdTC7hGMB1br',
+            referencePrivateKeyHex = '278a5de700e29faae8e40e366ec5012b5ec63d36ec77e8a2417154cc1d25383f',
+            chainPathHash = 'bd62885ec3f0e3838043115f4ce25eedd22cc86711803fb0c19601eeef185e39'
+
+        var privateKeychain = new PrivateKeychain(privateKeychainString),
+            descendantPrivateKeychain = privateKeychain.descendant(chainPathHash),
+            descendantPrivateKey = descendantPrivateKeychain.privateKey()
+        
