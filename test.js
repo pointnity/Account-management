@@ -141,3 +141,10 @@ function testPublicKeychain() {
         t.ok(address instanceof Address, 'address is an Address')
     })
 }
+
+function testUtils() {
+}
+
+testPrivateKeychain()
+testPublicKeychain()
+testUtils()
