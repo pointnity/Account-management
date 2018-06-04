@@ -132,3 +132,12 @@ function testPublicKeychain() {
         t.ok(publicKey, 'public key created')
         t.ok(publicKey instanceof PublicKey, 'public key is a PublicKey')
     })
+
+    test('address', function(t) {
+        t.plan(2)
+
+        var address = accountPublicKeychain.address()
+        t.ok(address, 'address created')
+        t.ok(address instanceof Address, 'address is an Address')
+    })
+}
