@@ -85,4 +85,21 @@ function testPrivateKeychain() {
         var privateKeychain = new PrivateKeychain(privateKeychainString),
             descendantPrivateKeychain = privateKeychain.descendant(chainPathHash),
             descendantPrivateKey = descendantPrivateKeychain.privateKey()
-        
+              
+        t.ok(descendantPrivateKey, 'descendant private key derived')
+        t.equal(descendantPrivateKey.toString(), referencePrivateKeyHex, 'descendant private key matches the reference value')
+    })
+
+    test('secretHash', function(t) {
+        t.plan(2)
+
+        secretHash = accountPrivateKeychain.secretHash(childKeyName)
+
+        t.ok(secretHash, 'chain path hash created')
+        t.ok(typeof secretHash === 'string', 'chain path hash is a string')
+    })
+}
+
+function testPublicKeychain() {
+    test('child', function(t) {
+        t.plan(2)
