@@ -11,3 +11,8 @@
     "url": "https://github.com/blockstack/keychain-manager.git"
   },
   "keywords": [
+    "key",
+    "keychain",
+    "hd",
+    "hierarchical",
+    "deterministic",
