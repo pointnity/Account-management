@@ -7,3 +7,7 @@
     "test": "tape test.js"
   },
   "repository": {
+  "type": "git",
+    "url": "https://github.com/blockstack/keychain-manager.git"
+  },
+  "keywords": [
