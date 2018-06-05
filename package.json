@@ -20,3 +20,29 @@
     "ecdsa",
     "crypto",
     "cryptography",
+    "private",
+    "public",
+    "lockchain",
+    "keylocker",
+    "bip32"
+  ],
+  "author": {
+    "name": "Halfmoon Labs, Inc.",
+    "email": "hello@onename.com",
+    "url": "https://onename.com"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/blockstack/keychain-manager",
+  "dependencies": {
+    "bitcore-lib": "^0.13.11",
+    "bn.js": "^3.1.1"
+  },
+  "devDependencies": {
+    "tape": "^4.0.1"
+  },
+  "files": [
+    "lib/",
+    "*.js",
+    "README.md"
+  ]
+}
