@@ -16,3 +16,7 @@
     "hd",
     "hierarchical",
     "deterministic",
+    "bitcoin",
+    "ecdsa",
+    "crypto",
+    "cryptography",
